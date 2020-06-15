@@ -5,7 +5,7 @@ import App from "./app.jsx";
 describe(`Testing App`, () => {
   it(`Render App`, () => {
     const tree = renderer.create(
-        <App mistakes={3} />
+        <App mistakes={3} welcomeButtonClickHandler={() => {}} />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

@@ -5,7 +5,10 @@ import WelcomeScreen from "./welcome-screen.jsx";
 describe(`Testing WelcomeScreen`, () => {
   it(`Render WelcomeScreen`, () => {
     const tree = renderer.create(
-        <WelcomeScreen mistakes={3} />
+        <WelcomeScreen
+          mistakes={3}
+          welcomeButtonClickHandler={() => {}}
+        />
     );
 
     expect(tree).toMatchSnapshot();
