@@ -9,12 +9,12 @@ Enzyme.configure({
 
 describe(`Test WlcomeScreen component`, () => {
   it(`Click welcome button`, () => {
-    const onWelcomeButtonClickHandler = jest.fn();
+    const ononWelcomeButtonClickHandler = jest.fn();
 
     const weclomeScreen = shallow(
         <WelcomeScreen
           mistakes={3}
-          welcomeButtonClickHandler={onWelcomeButtonClickHandler}
+          onWelcomeButtonClickHandler={ononWelcomeButtonClickHandler}
         />
     );
 
@@ -22,7 +22,7 @@ describe(`Test WlcomeScreen component`, () => {
 
     welcomeButton.simulate(`click`);
 
-    expect(onWelcomeButtonClickHandler.mock.calls.length).toBe(1);
+    expect(ononWelcomeButtonClickHandler.mock.calls.length).toBe(1);
   });
 });
 

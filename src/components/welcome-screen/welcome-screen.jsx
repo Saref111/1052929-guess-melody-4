@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-const WelcomeScreen = ({mistakes, welcomeButtonClickHandler}) => {
+const WelcomeScreen = ({ mistakes, onWelcomeButtonClickHandler }) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">
-        <img src="img/melody-logo.png" alt="Угадай мелодию" width="186" height="83"/>
+        <img src="img/melody-logo.png" alt="Угадай мелодию" width="186" height="83" />
       </div>
-      <button onClick={welcomeButtonClickHandler} className="welcome__button"><span className="visually-hidden">Начать игру</span></button>
+      <button onClick={onWelcomeButtonClickHandler} className="welcome__button"><span className="visually-hidden">Начать игру</span></button>
       <h2 className="welcome__rules-title">Правила игры</h2>
       <p className="welcome__text">Правила просты:</p>
       <ul className="welcome__rules-list">
@@ -22,7 +22,7 @@ const WelcomeScreen = ({mistakes, welcomeButtonClickHandler}) => {
 
 WelcomeScreen.propTypes = {
   mistakes: PropTypes.number.isRequired,
-  welcomeButtonClickHandler: PropTypes.func.isRequired,
+  onWelcomeButtonClickHandler: PropTypes.func.isRequired,
 };
 
 export default WelcomeScreen;
