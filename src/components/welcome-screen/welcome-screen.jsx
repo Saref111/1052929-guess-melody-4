@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-const WelcomeScreen = ({ mistakes, onWelcomeButtonClickHandler }) => {
+const WelcomeScreen = ({mistakes, onWelcomeButtonClickHandler}) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">

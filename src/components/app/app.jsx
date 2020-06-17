@@ -4,8 +4,13 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
+import QUESTION_TYPES from "../../const.js";
 
-const App = ({mistakes, onWelcomeButtonClickHandler}) => {
+
+const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
+  const artistQuestions = [...questions].find((it) => it.type === QUESTION_TYPES.ARTIST);
+  const genreQuestions = [...questions].find((it) => it.type === QUESTION_TYPES.GENRE);
+
   return (
     <BrowserRouter>
       <Switch>
@@ -13,10 +18,10 @@ const App = ({mistakes, onWelcomeButtonClickHandler}) => {
           <WelcomeScreen mistakes={mistakes} onWelcomeButtonClickHandler={onWelcomeButtonClickHandler} />
         </Route>
         <Route exact path="/dev-artist">
-          <ArtistQuestionScreen />
+          <ArtistQuestionScreen question={artistQuestions} />
         </Route>
         <Route exact path="/dev-genre">
-          <GenreQuestionScreen />
+          <GenreQuestionScreen question={genreQuestions} />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -26,6 +31,9 @@ const App = ({mistakes, onWelcomeButtonClickHandler}) => {
 App.propTypes = {
   mistakes: PropTypes.number.isRequired,
   onWelcomeButtonClickHandler: PropTypes.func.isRequired,
+  questions: PropTypes.shape([{
+    type: PropTypes.oneOf(Object.values(QUESTION_TYPES)).isRequired
+  }])
 };
 
 export default App;
