@@ -51,7 +51,7 @@ class ArtistQuestionScreen extends PureComponent {
                     onChange={(evt) => {
                       evt.preventDefault();
 
-                      onAnswer();
+                      onAnswer(question, answer);
                     }}/>
                   <label className="artist__name" htmlFor={`answer-${i}`}>
                     <img className="artist__picture" src={answer.picture} alt={answer.artist} />
