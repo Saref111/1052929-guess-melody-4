@@ -32,7 +32,13 @@ exports[`Testing ArtistQuestionScreen ArtistQuestionScreen snapshot-test 1`] = `
         cx="390"
         cy="390"
         r="370"
-        style="filter: url(#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center"
+        style={
+          Object {
+            "filter": "url(#blur)",
+            "transform": "rotate(-90deg) scaleY(-1)",
+            "transformOrigin": "center",
+          }
+        }
       />
     </svg>
     <div
@@ -78,7 +84,6 @@ exports[`Testing ArtistQuestionScreen ArtistQuestionScreen snapshot-test 1`] = `
     </div>
     <form
       className="game__artist"
-      onSubmit={[Function]}
     >
       <div
         className="artist"
@@ -87,6 +92,7 @@ exports[`Testing ArtistQuestionScreen ArtistQuestionScreen snapshot-test 1`] = `
           className="artist__input visually-hidden"
           id="answer-0"
           name="answer"
+          onChange={[Function]}
           type="radio"
           value="artist-0"
         />
@@ -109,6 +115,7 @@ exports[`Testing ArtistQuestionScreen ArtistQuestionScreen snapshot-test 1`] = `
           className="artist__input visually-hidden"
           id="answer-1"
           name="answer"
+          onChange={[Function]}
           type="radio"
           value="artist-1"
         />
@@ -131,6 +138,7 @@ exports[`Testing ArtistQuestionScreen ArtistQuestionScreen snapshot-test 1`] = `
           className="artist__input visually-hidden"
           id="answer-2"
           name="answer"
+          onChange={[Function]}
           type="radio"
           value="artist-2"
         />

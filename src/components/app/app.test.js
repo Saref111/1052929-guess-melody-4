@@ -42,7 +42,7 @@ const questions = [
 describe(`Testing App`, () => {
   it(`Render App`, () => {
     const tree = renderer.create(
-        <App mistakes={3} onWelcomeButtonClickHandler={() => {}} questions={questions}/>
+        <App mistakes={3} onWelcomeButtonClickHandler={() => {}} questions={questions} onAnswer={() => {}}/>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

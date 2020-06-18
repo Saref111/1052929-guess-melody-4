@@ -19,7 +19,7 @@ class ArtistQuestionScreen extends PureComponent {
           </a>
 
           <svg xmlns="http://www.w3.org/2000/svg" className="timer" viewBox="0 0 780 780">
-            <circle className="timer__line" cx="390" cy="390" r="370" style="filter: url(#blur); transform: rotate(-90deg) scaleY(-1); transform-origin: center" />
+            <circle className="timer__line" cx="390" cy="390" r="370" style={{filter: `url(#blur)`, transform: `rotate(-90deg) scaleY(-1)`, transformOrigin: `center`}}/>
           </svg>
 
           <div className="game__mistakes">
@@ -40,17 +40,19 @@ class ArtistQuestionScreen extends PureComponent {
             </div>
           </div>
 
-          <form className={`game__${type}`}
-            onSubmit={(evt) => {
-              evt.preventDefault();
-
-              onAnswer();
-            }}
-          >
+          <form className={`game__${type}`}>
             {answers.map((answer, i) => {
               return (
                 <div key={`${answer.picture}-${i}`} className="artist">
-                  <input className="artist__input visually-hidden" type="radio" name="answer" value={`artist-${i}`} id={`answer-${i}`} />
+                  <input className="artist__input visually-hidden"
+                    type="radio" name="answer"
+                    value={`artist-${i}`}
+                    id={`answer-${i}`}
+                    onChange={(evt) => {
+                      evt.preventDefault();
+
+                      onAnswer();
+                    }}/>
                   <label className="artist__name" htmlFor={`answer-${i}`}>
                     <img className="artist__picture" src={answer.picture} alt={answer.artist} />
                     {answer.artist}
