@@ -7,18 +7,18 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-describe(`Test WlcomeScreen component`, () => {
+describe(`Test WelcomeScreen component`, () => {
   it(`Click welcome button`, () => {
     const onWelcomeButtonClickHandler = jest.fn();
 
-    const weclomeScreen = shallow(
+    const welcomeScreen = shallow(
         <WelcomeScreen
           mistakes={3}
-          welcomeButtonClickHandler={onWelcomeButtonClickHandler}
+          onWelcomeButtonClickHandler={onWelcomeButtonClickHandler}
         />
     );
 
-    const welcomeButton = weclomeScreen.find(`button.welcome__button`);
+    const welcomeButton = welcomeScreen.find(`button.welcome__button`);
 
     welcomeButton.simulate(`click`);
 

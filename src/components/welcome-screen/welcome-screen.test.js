@@ -7,7 +7,7 @@ describe(`Testing WelcomeScreen`, () => {
     const tree = renderer.create(
         <WelcomeScreen
           mistakes={3}
-          welcomeButtonClickHandler={() => {}}
+          onWelcomeButtonClickHandler={() => {}}
         />
     );
 
