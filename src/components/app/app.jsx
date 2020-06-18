@@ -44,7 +44,8 @@ class App extends PureComponent {
                 this.setState((prevState) => {
                   return ({
                     step: prevState.step + 1,
-                  })});
+                  });
+                });
               }}
             />
           );
