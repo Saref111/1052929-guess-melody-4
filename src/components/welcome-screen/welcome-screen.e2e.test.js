@@ -7,22 +7,22 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-describe(`Test WlcomeScreen component`, () => {
+describe(`Test WelcomeScreen component`, () => {
   it(`Click welcome button`, () => {
-    const ononWelcomeButtonClickHandler = jest.fn();
+    const onWelcomeButtonClickHandler = jest.fn();
 
-    const weclomeScreen = shallow(
+    const welcomeScreen = shallow(
         <WelcomeScreen
           mistakes={3}
-          onWelcomeButtonClickHandler={ononWelcomeButtonClickHandler}
+          onWelcomeButtonClickHandler={onWelcomeButtonClickHandler}
         />
     );
 
-    const welcomeButton = weclomeScreen.find(`button.welcome__button`);
+    const welcomeButton = welcomeScreen.find(`button.welcome__button`);
 
     welcomeButton.simulate(`click`);
 
-    expect(ononWelcomeButtonClickHandler.mock.calls.length).toBe(1);
+    expect(onWelcomeButtonClickHandler.mock.calls.length).toBe(1);
   });
 });
 
