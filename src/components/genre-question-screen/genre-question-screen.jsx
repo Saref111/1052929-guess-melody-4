@@ -1,11 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-const onAnswer = (question, answers) => {
-  return console.log(question, answers);
-  ;
-};
-
 export default class GenreQuestionsScreen extends PureComponent {
   constructor(props) {
     super(props);
@@ -16,7 +11,7 @@ export default class GenreQuestionsScreen extends PureComponent {
   }
 
   render() {
-    const {question} = this.props;
+    const {question, onAnswer} = this.props;
     const {genre, answers} = question;
     const {answers: userAnswers} = this.state;
 
@@ -80,6 +75,7 @@ export default class GenreQuestionsScreen extends PureComponent {
 }
 
 GenreQuestionsScreen.propTypes = {
+  onAnswer: PropTypes.func.isRequired,
   question: PropTypes.shape({
     type: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,

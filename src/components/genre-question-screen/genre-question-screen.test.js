@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import GenreQuestionScreen from "./genre-question-screen";
+import GenreQuestionScreen from "./genre-question-screen.jsx";
 
 const question = {
   type: `genre`,
@@ -23,11 +23,12 @@ const question = {
       genre: `grindepop`,
     },
   ],
-}
+};
 
-describe(`Genre question test`, () => {
+describe(`Testing genreQuestionScreen`, () => {
   it(`Render GenreQuestionScreen`, () => {
-    const tree = renderer.create(<GenreQuestionScreen question={question}/>).toJSON();
+    const tree = renderer.create(<GenreQuestionScreen
+      question={question} onAnswer={() => {}}/>).toJSON();
 
     expect(tree).toMatchSnapshot();
   });

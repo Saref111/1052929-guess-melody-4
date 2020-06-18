@@ -7,7 +7,7 @@ import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.
 import {QUESTION_TYPES} from "../../const.js";
 
 
-const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
+const App = ({mistakes, onWelcomeButtonClickHandler, questions, onAnswer}) => {
   const artistQuestion = [...questions].find((it) => it.type === QUESTION_TYPES.ARTIST);
   const genreQuestion = [...questions].find((it) => it.type === QUESTION_TYPES.GENRE);
 
@@ -15,13 +15,22 @@ const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <WelcomeScreen mistakes={mistakes} onWelcomeButtonClickHandler={onWelcomeButtonClickHandler} />
+          <WelcomeScreen
+            mistakes={mistakes}
+            onWelcomeButtonClickHandler={onWelcomeButtonClickHandler}
+          />
         </Route>
         <Route exact path="/dev-artist">
-          <ArtistQuestionScreen question={artistQuestion} />
+          <ArtistQuestionScreen
+            question={artistQuestion}
+            onAnswer={onAnswer}
+          />
         </Route>
         <Route exact path="/dev-genre">
-          <GenreQuestionScreen question={genreQuestion} />
+          <GenreQuestionScreen
+            question={genreQuestion}
+            onAnswer={onAnswer}
+          />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -32,6 +41,7 @@ App.propTypes = {
   mistakes: PropTypes.number.isRequired,
   onWelcomeButtonClickHandler: PropTypes.func.isRequired,
   questions: PropTypes.arrayOf(object).isRequired,
+  onAnswer: PropTypes.func.isRequired,
 };
 
 export default App;

@@ -1,15 +1,14 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
-const onAnswer = () => {};
-
 class ArtistQuestionScreen extends PureComponent {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const {type, song, answers} = this.props.question;
+    const {onAnswer, question} = this.props;
+    const {type, song, answers} = question;
 
     return (
       <section className="game game--artist">
@@ -67,6 +66,7 @@ class ArtistQuestionScreen extends PureComponent {
 }
 
 ArtistQuestionScreen.propTypes = {
+  onAnswer: PropTypes.func.isRequired,
   question: PropTypes.shape({
     type: PropTypes.string.isRequired,
     song: PropTypes.shape({

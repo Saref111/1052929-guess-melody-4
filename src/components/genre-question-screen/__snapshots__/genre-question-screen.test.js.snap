@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Genre question test Render GenreQuestionScreen 1`] = `
+exports[`Testing genreQuestionScreen Render GenreQuestionScreen 1`] = `
 <section
   className="game game--genre"
 >

@@ -13,6 +13,7 @@ ReactDOM.render(
       mistakes={MOCK.MISTAKES}
       onWelcomeButtonClickHandler={MOCK.onWelcomeButtonClickHandler}
       questions={questions}
+      onAnswer={() => {}}
     />,
     document.querySelector(`#root`)
 );
