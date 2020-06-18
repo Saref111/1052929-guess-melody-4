@@ -8,8 +8,8 @@ import {QUESTION_TYPES} from "../../const.js";
 
 
 const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
-  const artistQuestions = [...questions].find((it) => it.type === QUESTION_TYPES.ARTIST);
-  const genreQuestions = [...questions].find((it) => it.type === QUESTION_TYPES.GENRE);
+  const artistQuestion = [...questions].find((it) => it.type === QUESTION_TYPES.ARTIST);
+  const genreQuestion = [...questions].find((it) => it.type === QUESTION_TYPES.GENRE);
 
   return (
     <BrowserRouter>
@@ -18,10 +18,10 @@ const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
           <WelcomeScreen mistakes={mistakes} onWelcomeButtonClickHandler={onWelcomeButtonClickHandler} />
         </Route>
         <Route exact path="/dev-artist">
-          <ArtistQuestionScreen question={artistQuestions} />
+          <ArtistQuestionScreen question={artistQuestion} />
         </Route>
         <Route exact path="/dev-genre">
-          <GenreQuestionScreen question={genreQuestions} />
+          <GenreQuestionScreen question={genreQuestion} />
         </Route>
       </Switch>
     </BrowserRouter>
