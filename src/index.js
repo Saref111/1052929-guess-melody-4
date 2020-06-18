@@ -4,11 +4,15 @@ import App from "./components/app/app.jsx";
 import questions from "./mock/questions.js";
 
 const MOCK = {
-  MISTAKES: 5,
+  MISTAKES: 3,
   onWelcomeButtonClickHandler: () => {},
 };
 
 ReactDOM.render(
-    <App mistakes={MOCK.MISTAKES} onWelcomeButtonClickHandler={MOCK.onWelcomeButtonClickHandler} questions={questions}/>,
+    <App
+      mistakes={MOCK.MISTAKES}
+      onWelcomeButtonClickHandler={MOCK.onWelcomeButtonClickHandler}
+      questions={questions}
+    />,
     document.querySelector(`#root`)
 );

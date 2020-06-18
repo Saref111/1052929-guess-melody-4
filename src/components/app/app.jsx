@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, {object} from "prop-types";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
-import QUESTION_TYPES from "../../const.js";
+import {QUESTION_TYPES} from "../../const.js";
 
 
 const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
@@ -31,9 +31,7 @@ const App = ({mistakes, onWelcomeButtonClickHandler, questions}) => {
 App.propTypes = {
   mistakes: PropTypes.number.isRequired,
   onWelcomeButtonClickHandler: PropTypes.func.isRequired,
-  questions: PropTypes.shape([{
-    type: PropTypes.oneOf(Object.values(QUESTION_TYPES)).isRequired
-  }])
+  questions: PropTypes.arrayOf(object).isRequired,
 };
 
 export default App;
