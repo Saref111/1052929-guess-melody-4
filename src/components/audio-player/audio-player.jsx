@@ -87,3 +87,5 @@ AudioPlayer.propTypes = {
   isPlaying: PropTypes.func.isRequired,
   src: PropTypes.string.isRequired,
 };
+
+export default AudioPlayer;
