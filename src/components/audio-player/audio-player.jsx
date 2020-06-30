@@ -60,7 +60,7 @@ class AudioPlayer extends PureComponent {
     const {isPlaying, isLoading} = this.state;
 
     return (
-      <div className="track">
+      <React.Fragment>
         <button
           className={`track__button track__button--${isPlaying ? `pause` : `play`}`}
           type="button"
@@ -70,7 +70,7 @@ class AudioPlayer extends PureComponent {
         <div className="track__status">
           <audio ></audio>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 
@@ -84,7 +84,7 @@ class AudioPlayer extends PureComponent {
 }
 
 AudioPlayer.propTypes = {
-  isPlaying: PropTypes.func.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
   src: PropTypes.string.isRequired,
 };
 
