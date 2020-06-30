@@ -13,8 +13,11 @@ test(`Audioplayer snap test`, () => {
       <AudioPlayer
         src={mock.song.src}
         isPlaying={false}
-      />
-  ).toJSON();
+      />, {
+        createNodeMock: () => {
+          return {};
+        }
+      }).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
