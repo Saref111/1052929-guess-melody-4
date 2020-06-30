@@ -4,16 +4,16 @@ export default [
     type: `genre`,
     genre: `rock`,
     answers: [{
-      src: `https://commons.wikimedia.org/wiki/File:Led_Zeppelin_At_Max_Cruising_Altitude_(Antti_Luode).mp3`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `rock`,
     }, {
-      src: `https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-J_S_BACH_CELLO_SUITE_1_in_G_Prelude.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `blues`,
     }, {
-      src: `https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-J_S_BACH_CELLO_SUITE_1_in_G_Prelude.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `jazz`,
     }, {
-      src: `https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-J_S_BACH_CELLO_SUITE_1_in_G_Prelude.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `rock`,
     }],
   },
@@ -21,7 +21,7 @@ export default [
     type: `artist`,
     song: {
       artist: `Jim Beam`,
-      src: `https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-J_S_BACH_CELLO_SUITE_1_in_G_Prelude.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
     },
     answers: [{
       picture: `${AVATAR_URL}/${Math.random()}`,
