@@ -30,6 +30,7 @@ describe(`Testing genreQuestionScreen`, () => {
     const tree = renderer.create(<GenreQuestionScreen
       question={question} onAnswer={() => {}}
       onButtonClick={() => {}}
+      renderPlayer={() => {}}
     />, {
       createNodeMock: () => {
         return {};

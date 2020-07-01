@@ -1,6 +1,5 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
-import AudioPlayer from "../audio-player/audio-player.jsx";
 
 class ArtistQuestionScreen extends PureComponent {
   constructor(props) {
@@ -12,8 +11,7 @@ class ArtistQuestionScreen extends PureComponent {
   }
 
   render() {
-    const {isPlaying} = this.state;
-    const {onAnswer, question} = this.props;
+    const {onAnswer, question, renderPlayer} = this.props;
     const {type, song, answers} = question;
 
     return (
@@ -21,13 +19,7 @@ class ArtistQuestionScreen extends PureComponent {
         <h2 className="game__title">Кто исполняет эту песню?</h2>
         <div className="game__track">
           <div className="track">
-            <AudioPlayer
-              isPlaying={true}
-              src={song.src}
-              onButtonClick={() => this.setState(() => {
-                return {isPlaying: !isPlaying};
-              })}
-            />
+            {renderPlayer(song.src, 0)}
           </div>
         </div>
 
@@ -58,6 +50,7 @@ class ArtistQuestionScreen extends PureComponent {
 }
 
 ArtistQuestionScreen.propTypes = {
+  renderPlayer: PropTypes.func.isRequired,
   onAnswer: PropTypes.func.isRequired,
   question: PropTypes.shape({
     type: PropTypes.string.isRequired,
