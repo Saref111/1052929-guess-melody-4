@@ -56,6 +56,7 @@ class AudioPlayer extends PureComponent {
   }
 
   render() {
+    const {onButtonClick} = this.props;
     const {isPlaying, isLoading} = this.state;
 
     return (
@@ -68,6 +69,7 @@ class AudioPlayer extends PureComponent {
             this.setState(() => {
               return {isPlaying: !this.state.isPlaying};
             });
+            onButtonClick();
           }}
         ></button>
         <div className="track__status">
@@ -90,6 +92,7 @@ class AudioPlayer extends PureComponent {
 
 AudioPlayer.propTypes = {
   isPlaying: PropTypes.bool.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
   src: PropTypes.string.isRequired,
 };
 
