@@ -7,14 +7,18 @@ export default class GenreQuestionsScreen extends PureComponent {
     super(props);
 
     this.state = {
-      answers: [false, false, false, false]
+      answers: [false, false, false, false],
+      activePlayer: 0,
     };
   }
 
   render() {
     const {question, onAnswer} = this.props;
     const {genre, answers} = question;
-    const {answers: userAnswers} = this.state;
+    const {
+      activePlayer,
+      answers: userAnswers
+    } = this.state;
 
     return (
       <section className="game__screen">
@@ -30,6 +34,13 @@ export default class GenreQuestionsScreen extends PureComponent {
               <AudioPlayer
                 isPlaying={i === 0}
                 src={answer.src}
+                onButtonClick={() => {
+                  this.setState(() => {
+                    return {
+                      activePlayer: activePlayer === i ? -1 : i
+                    };
+                  });
+                }}
               />
               <div className="game__answer">
                 <input className="game__input visually-hidden" type="checkbox" name="answer"
