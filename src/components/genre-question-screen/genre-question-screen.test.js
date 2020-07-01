@@ -29,6 +29,7 @@ describe(`Testing genreQuestionScreen`, () => {
   it(`Render GenreQuestionScreen`, () => {
     const tree = renderer.create(<GenreQuestionScreen
       question={question} onAnswer={() => {}}
+      onButtonClick={() => {}}
     />, {
       createNodeMock: () => {
         return {};

@@ -11,6 +11,7 @@ const mock = {
 test(`Audioplayer snap test`, () => {
   const tree = renderer.create(
       <AudioPlayer
+        onButtonClick={() => {}}
         src={mock.song.src}
         isPlaying={false}
       />, {
