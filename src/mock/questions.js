@@ -4,16 +4,16 @@ export default [
     type: `genre`,
     genre: `rock`,
     answers: [{
-      src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `rock`,
     }, {
-      src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `blues`,
     }, {
-      src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `jazz`,
     }, {
-      src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
       genre: `rock`,
     }],
   },
@@ -21,7 +21,7 @@ export default [
     type: `artist`,
     song: {
       artist: `Jim Beam`,
-      src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
+      src: `https://upload.wikimedia.org/wikipedia/commons/e/e9/Arthur_Collins%2C_Hello_Ma_Baby.ogg`,
     },
     answers: [{
       picture: `${AVATAR_URL}/${Math.random()}`,

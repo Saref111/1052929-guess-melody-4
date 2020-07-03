@@ -28,7 +28,14 @@ const question = {
 describe(`Testing genreQuestionScreen`, () => {
   it(`Render GenreQuestionScreen`, () => {
     const tree = renderer.create(<GenreQuestionScreen
-      question={question} onAnswer={() => {}}/>).toJSON();
+      question={question} onAnswer={() => {}}
+      onButtonClick={() => {}}
+      renderPlayer={() => {}}
+    />, {
+      createNodeMock: () => {
+        return {};
+      }
+    }).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
