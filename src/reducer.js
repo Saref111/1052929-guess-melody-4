@@ -11,14 +11,14 @@ const ActionType = {
 };
 
 const reducer = (state = initialState, action) => {
-  switch (Selection.type) {
+  switch (action.type) {
     case ActionType.INCREMENT_MISTAKES:
       return extend(state, {
-        step: state.mistakes + action.mistakes,
+        mistakes: state.mistakes + action.payload,
       });
     case ActionType.INCREMENT_STEP:
       return extend(state, {
-        step: state.step + action.step,
+        step: state.step + action.payload,
       });
   }
 
