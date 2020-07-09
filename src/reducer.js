@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const ActionType = {
-  INCREMENT_MISTAKES: `INCREMENT_MiSTAKES`,
+  INCREMENT_MISTAKES: `INCREMENT_MISTAKES`,
   INCREMENT_STEP: `INCREMENT_STEP`
 };
 
@@ -25,4 +25,11 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-export {ActionType, reducer};
+const ActionCreator = {
+  incrementStep: () => ({
+    type: ActionType.INCREMENT_STEP,
+    payload: 1,
+  })
+};
+
+export {ActionType, reducer, ActionCreator};

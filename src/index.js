@@ -11,15 +11,16 @@ const MOCK = {
   onWelcomeButtonClickHandler: () => {},
 };
 
-const store = createStore(reducer);
+const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
+);
 
 ReactDOM.render(
     <Provider store={store} >
       <App
         mistakes={MOCK.MISTAKES}
-        onWelcomeButtonClickHandler={MOCK.onWelcomeButtonClickHandler}
         questions={questions}
-        onAnswer={() => {}}
       />
     </Provider>,
     document.querySelector(`#root`)
