@@ -67,16 +67,20 @@ class App extends PureComponent {
             {this._renderGameScreen()}
           </Route>
           <Route exact path="/dev-artist">
-            <ArtistQuestionScreenWrapped
-              question={artistQuestion}
-              onAnswer={onAnswer}
-            />
+            <GameScreen type={artistQuestion.type}>
+              <ArtistQuestionScreenWrapped
+                question={artistQuestion}
+                onAnswer={onAnswer}
+              />
+            </GameScreen>
           </Route>
           <Route exact path="/dev-genre">
-            <GenreQuestionScreenWrapped
-              question={genreQuestion}
-              onAnswer={onAnswer}
-            />
+            <GameScreen type={genreQuestion.type}>
+              <GenreQuestionScreenWrapped
+                question={genreQuestion}
+                onAnswer={onAnswer}
+              />
+            </GameScreen>
           </Route>
         </Switch>
       </BrowserRouter>
@@ -100,8 +104,9 @@ const mapDispatchToProps = (dispatch) => ({
   onWelcomeButtonClickHandler() {
     dispatch(ActionCreator.incrementStep());
   },
-  onAnswer() {
+  onAnswer(question, answer) {
     dispatch(ActionCreator.incrementStep());
+    dispatch(ActionCreator.incrementMistake(question, answer));
   },
 });
 
