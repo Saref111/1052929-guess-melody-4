@@ -16,13 +16,13 @@ const GenreQuestionScreenWrapped = withActivePlayer(GenreQuestionScreen);
 
 class App extends PureComponent {
   _renderGameScreen() {
-    const {mistakes, questions, step, onWelcomeButtonClickHandler, onAnswer} = this.props;
+    const {maxMistakes, questions, step, onWelcomeButtonClickHandler, onAnswer} = this.props;
     const question = questions[step];
 
     if (step === -1 || step >= questions.length) {
       return (
         <WelcomeScreen
-          mistakes={mistakes}
+          mistakes={maxMistakes}
           onWelcomeButtonClickHandler={onWelcomeButtonClickHandler}
         />
       );
@@ -90,7 +90,7 @@ class App extends PureComponent {
 
 App.propTypes = {
   step: PropTypes.number.isRequired,
-  mistakes: PropTypes.number.isRequired,
+  maxMistakes: PropTypes.number.isRequired,
   onWelcomeButtonClickHandler: PropTypes.func.isRequired,
   questions: PropTypes.arrayOf(object).isRequired,
   onAnswer: PropTypes.func.isRequired,
@@ -98,6 +98,8 @@ App.propTypes = {
 
 const mapStateToProps = (state) => ({
   step: state.step,
+  maxMistakes: state.maxMistakes,
+  questions: state.questions,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -105,8 +107,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.incrementStep());
   },
   onAnswer(question, answer) {
-    dispatch(ActionCreator.incrementStep());
     dispatch(ActionCreator.incrementMistake(question, answer));
+    dispatch(ActionCreator.incrementStep());
   },
 });
 

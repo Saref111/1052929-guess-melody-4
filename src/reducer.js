@@ -1,9 +1,12 @@
 import {extend} from "./utils.js";
 import {QUESTION_TYPES} from "./const.js";
+import questions from "./mock/questions.js";
 
 const initialState = {
   mistakes: 0,
-  step: -1
+  maxMistakes: 3,
+  step: -1,
+  questions,
 };
 
 const ActionType = {
@@ -24,12 +27,26 @@ const isGenreAnswerCorrect = (question, userAnswer) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.INCREMENT_MISTAKES:
+      const nextStep = state.mistakes + action.payload;
+
+      if (nextStep >= state.questions.length) {
+        return extend({}, initialState);
+      }
+
       return extend(state, {
-        mistakes: state.mistakes + action.payload,
+        mistakes: nextStep,
       });
+
+
     case ActionType.INCREMENT_STEP:
+      const mistakes = action.mistakes + action.payload;
+
+      if (mistakes >= state.maxMistakes) {
+        return extend({}, initialState);
+      }
+
       return extend(state, {
-        step: state.step + action.payload,
+        step: mistakes,
       });
   }
 
