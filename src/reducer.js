@@ -26,27 +26,27 @@ const isGenreAnswerCorrect = (question, userAnswer) => {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case ActionType.INCREMENT_MISTAKES:
-      const nextStep = state.mistakes + action.payload;
+    case ActionType.INCREMENT_STEP:
+      const nextStep = state.step + action.payload;
 
       if (nextStep >= state.questions.length) {
         return extend({}, initialState);
       }
 
       return extend(state, {
-        mistakes: nextStep,
+        step: nextStep,
       });
 
 
-    case ActionType.INCREMENT_STEP:
-      const mistakes = action.mistakes + action.payload;
+    case ActionType.INCREMENT_MISTAKES:
+      const updatedMistakes = state.mistakes + action.payload;
 
-      if (mistakes >= state.maxMistakes) {
+      if (updatedMistakes >= state.maxMistakes) {
         return extend({}, initialState);
       }
 
       return extend(state, {
-        step: mistakes,
+        mistakes: updatedMistakes,
       });
   }
 
